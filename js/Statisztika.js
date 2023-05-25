@@ -1,11 +1,10 @@
 class Statisztika {
-    #lista;
     constructor(lista) {
-        this.#lista = lista;
+        this.lista = lista;
     }
     nemszerintSzama(nem) {
         let db = 0;
-        this.#lista.forEach((element) => {
+        this.lista.forEach((element) => {
             if (element.nem === nem) {
                 db++;
             }
@@ -14,15 +13,15 @@ class Statisztika {
     }
     atlagEletkor() {
         let atlag = 0;
-        this.#lista.forEach((element) => {
+        this.lista.forEach((element) => {
             atlag += element.kor;
         });
-        return atlag / this.#lista.length;
+        return atlag / this.lista.length;
     }
     nemszerintAtlagEletkora(nem) {
         let atlag = 0;
         let db = 0;
-        this.#lista.forEach((element) => {
+        this.lista.forEach((element) => {
             if (element.nem === nem) {
                 atlag += element.kor;
                 db++;
@@ -31,3 +30,4 @@ class Statisztika {
         return atlag / db;
     }
 }
+export default Statisztika
